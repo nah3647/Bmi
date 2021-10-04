@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BMI calculator</title>
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    </head>
+    <style media="screen">
+    body{
+        margin:0;
+        padding: 0;
+        text-align: center;
+        font-family: sans-serif;
+        background-image: linear-gradient(120deg, #4de65a, #f1e151);
+        min-height: 100vh;
+    }
+    #container{
+        width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 20px #ee5253;
+    }
+    h2{font-size: 30px;
+    font-weight: 600;}
+    .text{
+        text-align: left;
+        margin-left: 150px;
+    }
+ #w, #h{
+     color: #222f3e;
+     text-align: left;
+     font-size: 20px;
+     font-weight: 200;
+     outline: none;
+     border: none;
+     background: none;
+     border-bottom: 1px solid #341f97;
+     width: 200px;
+ }
+ #w:focus, #h:focus{
+     border-bottom: 2px solid #341f97;
+     width: 300px;
+     transition: 0.5s;
+ }
+
+#result{
+    color: #341f97;
+}
+#btn{
+    font-family: inherit;
+    margin-top: 10px;
+    border: none;
+    color: white;
+    background-image: linear-gradient(120deg, #ff6b6b, #5f27cd);
+    width: 150px;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+#btn:hover{
+    box-shadow: 1px 1px 10px #341f97;
+}
+.reco{
+    
+    border-style: solid;
+    border-color:blue;
+    width: 200px;
+    height: 100px;
+    text-align: left;
+    align-items: inherit;
+    background-color:linear-gradient(120deg, #ff6b6b, #5f27cd);
+    text-align: center;
+    font-size: 10px;
+
+}
+    </style>
+    <script type="text/javascript">
+    function BMI(){
+        var h=document.getElementById("h").value;
+        var w=document.getElementById("w").value;    
+    var bmi=w/(h/100*h/100);
+var bmio=(bmi.toFixed(2));
+document.getElementById("result").innerHTML="Your BMI is" + " " + bmio;  }
+    </script>
+    <body>
+  <div id="container">
+ <h2>BMI calculator</h2>
+ <p class="text">Height in (Cm)</p>
+<input type="text" id="h">
+ <p class="text">Weight in (Kg)</p>
+<input type="text" id="w">
+<p id="result"></p>
+<button id="btn" onclick="BMI()">Calculate</button>
+
+
+  </div>
+  <div class="reco">
+  <p id="first">UnderWeight (Below 18.5)</p>
+  <p id="second">Normal (18.5 - 24.9)</p>
+  <p id="third">OverWeight (25.0-29.9)</p>
+  <p id="fourth">obese (above 30.0)</p>
+</div>
+<p id="contact">
+    <a href="https://nahomwm.netlify.app">contact the developer</a>
+</p>
+    </body>
+</html>
